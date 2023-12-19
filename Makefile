@@ -61,7 +61,7 @@ internal_adhoc:
 	echo "╠ Removing build products and intermediate files from the build root..."
 	cd ios && xcodebuild clean && cd ..
 	echo "╠ Regenerate Common.xcconfig..."
-	dart run scripts/gen_xcconfig.dart -f internal -m debug
+	dart run scripts/gen_xcconfig.dart -f internal -m release
 	echo "╠ Resolving ios dependencies..."
 	cd ios && pod install && cd ..
 	echo "╠ Releasing to pgyer..."
@@ -81,7 +81,7 @@ external_adhoc:
 	echo "╠ Removing build products and intermediate files from the build root..."
 	cd ios && xcodebuild clean && cd ..
 	echo "╠ Regenerate Common.xcconfig..."
-	dart run scripts/gen_xcconfig.dart -f external -m debug
+	dart run scripts/gen_xcconfig.dart -f external -m release
 	echo "╠ Resolving ios dependencies..."
 	cd ios && pod install && cd ..
 	echo "╠ Releasing to pgyer..."
