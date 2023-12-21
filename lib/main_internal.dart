@@ -5,8 +5,8 @@ import 'app_config.dart';
 
 void main() {
   AppConfig.create(
-    appName: "Dev Example",
-    baseUrl: "https://dwirandyh.com",
+    appName: "Internal Example",
+    baseUrl: "https://api.example.com/internal",
     flavor: Flavor.internal,
   );
 

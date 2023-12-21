@@ -1,9 +1,9 @@
 enum Flavor { internal, external }
 
 class AppConfig {
-  String appName = "";
-  String baseUrl = "";
-  Flavor flavor = Flavor.internal;
+  final String appName;
+  final String baseUrl;
+  final Flavor flavor;
 
   static AppConfig shared = AppConfig.create();
 
@@ -12,8 +12,8 @@ class AppConfig {
     String baseUrl = "",
     Flavor flavor = Flavor.internal,
   }) {
-    return shared = AppConfig(appName, baseUrl, flavor);
+    return shared = AppConfig._(appName, baseUrl, flavor);
   }
 
-  AppConfig(this.appName, this.baseUrl, this.flavor);
+  AppConfig._(this.appName, this.baseUrl, this.flavor);
 }
